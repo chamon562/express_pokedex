@@ -9,7 +9,8 @@ const pokemon = require('../models/pokemon');
 router.get('/', (req, res) =>{
       db.pokemon.findAll()
       .then(pokemons => {
-        res.render('../views/favorites')
+        //once cick on pokem as favorite and render to poke fav page and send to favorties page
+        res.render('../views/favorites', {pokemons} )
         // console.log('Created: ', poke.name)
        
       })
