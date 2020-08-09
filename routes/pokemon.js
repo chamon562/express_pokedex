@@ -20,7 +20,9 @@ router.get('/', (req, res) =>{
   // TODO: Get all records from the DB and render to view
 });
 router.get('/:name', (req, res) =>{
-  let pokeAll = 'http://pokeapi.co/api/v2/pokemon/bulbasaur';
+
+  let name = req.params.name
+  let pokeAll = `http://pokeapi.co/api/v2/pokemon/${name}`;
   axios.get(pokeAll)
   .then(function(apiResponse){
   
