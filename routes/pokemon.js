@@ -3,14 +3,14 @@ var router = express.Router();
 // Make sure to require your models in the files where they will be used.
 var db = require('../models');
 const pokemon = require('../models/pokemon');
-
+const axios = require('axios'); 
 
 
 //add pokemon to our database and find more things about them
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) =>{
 
-  let nameFilter = req.query.nameFilter
+  let nameFilter = 
       db.pokemon.findAll()
       .then(pokemons => {
         //once cick on pokem as favorite and render to poke fav page and send to favorties page
@@ -21,11 +21,10 @@ router.get('/', (req, res) =>{
   // TODO: Get all records from the DB and render to view
 });
 
-// router.get('/', (req, res) =>{
-//   res.render('')
-// })
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/',  (req, res) => {
+
+  
   
    db.pokemon.findOrCreate({
     where: {
