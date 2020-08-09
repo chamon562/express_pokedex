@@ -19,11 +19,12 @@ app.get('/', (req, res) => {
   //initial request url
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151>';
   // Use request to call the API
-  axios.get(pokemonUrl).then( function(apiResponse) {
+  axios.get(pokemonUrl)
+  .then( function(apiResponse) {
     //do alot of console.llog to see what returns were getting
     // console.log(response.data)
     var pokemon = apiResponse.data.results;
-    // console.log(pokemon)
+    console.log(pokemon)
     //rendering all on home page
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })

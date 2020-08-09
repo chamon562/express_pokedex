@@ -2,13 +2,14 @@
 <div> 
     <a href="/">Back to home</a>
     
-    <h2>Your favorite list of added Pokemon.</h2>
-    <h4>You have:</h4>
+    <h2>Greetings Poke Master!</h2>
+    <h4>These are the Pokemons you have added to your favorites.  </h4>
     <% if(pokemons.length) {%>
         <% pokemons.forEach(poke => {%>
            <ul> <!-- put al information from fave route -->
             <a href="/pokemon/<%= poke.name%>">
                 <li>  <h2><%= poke.name %> </h2> </li>  
+                
             </a>
         </ul>
 
