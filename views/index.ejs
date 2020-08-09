@@ -15,7 +15,7 @@ creating var pokemon = apiResponse.data.results -->
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
-      <h4><%= pokemon.url.name%></h4>
+      
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button href="/views/<%= pokemon.id%>" class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
