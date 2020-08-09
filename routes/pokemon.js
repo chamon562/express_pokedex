@@ -21,6 +21,14 @@ router.get('/', (req, res) =>{
 });
 router.get('/:name', (req, res) =>{
 
+  let nameFilter = req.params.nameFilter
+  // keep in dinoData  and dinos whose name matches the nameFilter the user searched for
+      if(nameFilter){
+          //passing dinoData through
+          pokemons.filter((pokemon) =>{
+              return pokemon.name.toLowerCase() === nameFilter.toLowerCase()  
+     })
+ }
   let name = req.params.name
   let pokeAll = `http://pokeapi.co/api/v2/pokemon/${name}`;
   axios.get(pokeAll)
