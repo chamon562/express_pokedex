@@ -9,8 +9,6 @@ const axios = require('axios');
 //add pokemon to our database and find more things about them
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) =>{
-
-  let nameFilter = 
       db.pokemon.findAll()
       .then(pokemons => {
         //once cick on pokem as favorite and render to poke fav page and send to favorties page
@@ -23,12 +21,10 @@ router.get('/', (req, res) =>{
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/',  (req, res) => {
-
-  
-  
-   db.pokemon.findOrCreate({
+  db.pokemon.findOrCreate({
     where: {
-      name: req.body.name,
+      name: req.body.name
+     
       }
   });
   res.redirect('/pokemon');
