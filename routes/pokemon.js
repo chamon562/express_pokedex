@@ -30,18 +30,55 @@ router.get('/:name', (req, res) =>{
     console.log(apiResponse.data)
     res.render('show', { pokemon: pokemon})
   })
+  .catch((err) =>{
+    console.log('error', err)
+    res.render('error')
+
+  })
 })
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/',  (req, res) => {
+  //db.pokemon is the name of the data table
   db.pokemon.findOrCreate({
     where: {
       name: req.body.name
      }
   }).then(()=>{
+    //redirected to my pokemon page 
     res.redirect('/pokemon');
   })
+  .catch((err) =>{
+    console.log('error', err)
+    res.render('error')
+
+  })
 });
-
-
+//TODO create Delete route 
+// router.delete('/:name', (req, res)=>{
+//   console.log()
+//   db.pokemon.destroy({
+//     where:{name: req.params.name}
+//   })
+// })
+router.delete('/:name', (req, res)=>{
+  // what do we need to access to delete the database
+  // pass in an object
+  db.pokemon.destroy({
+    // what are we sending req. body or 
+    // req.params the params is the in the index.ejs whatever in the url is gona be the req.params.
+    where: {name: req.params.name}
+  })
+  //want to redirect to pokemon fav page. 
+  //nothing to pass through because its been deleted
+  .then(()=>{
+    //always want to redirect to where you want your user to be at
+    res.redirect('/pokemon')
+  })
+  .catch((err)=>{
+    console.log('ERROR', err)
+    //Make error page for ejs
+    res.render('error')
+  })
+})
 
 module.exports = router;

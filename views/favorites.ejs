@@ -15,7 +15,6 @@
            <ul id="pokeBall"> <!-- put al information from fave route -->
             <a href="/pokemon/<%= poke.name%>">
                 <h2 id="favePage"><%= poke.name %></h2> 
-                
             </a>
           </ul>
 
@@ -23,4 +22,9 @@
    <% } else {%> 
     <h2> No faves yet</h2>
        <% }%> 
+       <!-- <form method="POST" action="/pokemon/<%= pokemon.name%>?_method=DELETE">
+        <button type="submit">DELETE FAVE</button>
+        </form> -->
+
+       
    </div>
