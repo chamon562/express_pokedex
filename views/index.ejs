@@ -1,26 +1,20 @@
 <div class="container">
   <img class="text-center" src="https://fontmeme.com/permalink/200810/7ae965298c301fecbe30e9c69f637b91.png" alt="pokemon-font"> 
+  <img src="https://media.tenor.com/images/50149663136b124550ebc9a055d2c3a7/tenor.gif" alt="">
   <h1 class="text-center"><img src="https://fontmeme.com/permalink/200810/ca749e4e58cbcba83e699458f63e8758.png" alt="pokemon-font"> </h1>
   <p class="text-center">
-    <a id="clickFav" href="/pokemon"><img id="clickFav" src="https://fontmeme.com/permalink/200810/f0c6ffabeea0dc56673f6563c0c758f9.png" alt="pokemon-font"></a>
+    <a id="clickFav" href="/pokemon"><img src="https://fontmeme.com/permalink/200810/f4336bfaae3535427aacd69d8244b7bf.png" alt="pokemon-font"></a>
   </p>
-<!-- <div class="nameFilter">
-  <form method="GET" action="/">
-  <label for="nameFilter">Filter by name</label>
-  <input id="nameFilter" type="text" name="nameFilter">
-  <input type="submit">
-  </form>
-</div> -->
-<!-- pokemon is from the index.js that started from 
-creating var pokemon = apiResponse.data.results -->
+</div>
+
+<div id="well">
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
       <h2><%= pokemon.name %></h2>
       
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button href="/views/<%= pokemon.id%>" class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
-    </div>
+
   <% }); %>
 </div>

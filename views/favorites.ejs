@@ -1,20 +1,26 @@
 
-<div> 
+<div id="favePage"> 
     <a href="/">Back to home</a>
+    <div id="favePageTitle">
+    <img src="https://fontmeme.com/permalink/200810/eafad76ac977ad4d1700dbd3dbb1e861.png" alt="pokemon-font">
+    <h2><img src="https://fontmeme.com/permalink/200810/cf0aede8c34e1338656cc677c0de21be.png" alt="pokemon-font"></h2>
+    <img src="https://fontmeme.com/permalink/200810/fb4868a2d5f75ff46e1a238071c9dd92.png" alt="cartoonia-3d-font">
     
-    <h2>Greetings Poke Master!</h2>
-    <h4>These are the Pokemons you have added to your favorites.  </h4>
+</div>
+
+<img src="https://archive-media-1.nyafuu.org/vp/image/1367/54/1367543871901.gif" alt="">
+<div id="faveName">
     <% if(pokemons.length) {%>
         <% pokemons.forEach(poke => {%>
            <ul id="pokeBall"> <!-- put al information from fave route -->
             <a href="/pokemon/<%= poke.name%>">
-                <li >  <h2><%= poke.name %> </h2> </li>  
+                <h2 id="favePage"><%= poke.name %></h2> 
+                
             </a>
-            <h4><%= poke.url%></h4>
-        </ul>
+          </ul>
 
       <% })%>
    <% } else {%> 
     <h2> No faves yet</h2>
        <% }%> 
-</div>
+   </div>

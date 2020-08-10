@@ -1,24 +1,59 @@
+
 body{
-    text-emphasis: center;
+   
+    
+    background-image: url('https://i.pinimg.com/originals/a9/6e/30/a96e30788d743dee8b7c8b0b55832b80.gif');
    
 }
-
+.text-center{
+    align-items: center;
+}
 .container{
-    background-color: rgba(99, 237, 247, 0.899);
+    text-align: center;
+}
+
+.titleShine{
+    width: 100px;
+    height: 100px;
+
 }
 #indexTitle{
     text-align: center;
 }
-.well{
-background-color: pink;
-text-align: center;
-width: 20%;
-background: pink;
-color: rgb(235, 24, 24);
-font-family: sans-serif;
+#well{
+    color: whitesmoke;
+    font-family: sans-serif; 
+}
 
+#favePage{
+    display: grid;
+    color: silver;
+}
+#favePageTitle{
 
-   
+   text-align: center;
+}
+
+#faveDetails{
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
+    color:silver;
+}
+#faveName{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 0rem;
+    height: 0rem;
+}
+#pokeName{
+    color: yellow;
+    font-size: 50px;
 }
 #clickFav:hover{
   opacity: .5;
