@@ -1,4 +1,27 @@
 body{
-    /* text-align: center; */
+    text-emphasis: center;
+   
 }
 
+.container{
+    background-color: rgba(99, 237, 247, 0.899);
+}
+#indexTitle{
+    text-align: center;
+}
+.well{
+background-color: pink;
+text-align: center;
+width: 20%;
+background: pink;
+color: rgb(235, 24, 24);
+font-family: sans-serif;
+
+
+   
+}
+#clickFav:hover{
+  opacity: .5;
+  
+ 
+}
